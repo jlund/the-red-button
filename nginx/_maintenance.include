@@ -1,0 +1,14 @@
+if (-f $request_filename ) {
+  break;
+}
+
+if (-e $document_root/maintenance-on) {
+  return 503;
+}
+
+error_page 503 @503;
+
+location @503 {
+  rewrite ^(.*)$ /maintenance.html;
+  break;
+}
