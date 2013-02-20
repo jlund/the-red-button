@@ -11,12 +11,6 @@ describe RedButton do
     end
   end
 
-# describe "#ssh_command" do
-#   it "formats the SSH command correctly" do
-#     TheRedButton.ssh_command("test_host", "/var/www/example.com/shared").should eq "ssh test_host \'touch /var/www/example.com/shared/maintenance-on\'"
-#   end
-# end
-
   describe "#targets_are_valid" do
     it "succeeds if a target has all required attributes" do
       expect { RedButton.new(targets) }.to_not raise_error(MalformedTargetsError)
