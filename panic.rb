@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-require_relative 'the-red-button'
+require_relative 'red_button'
 
 targets = [
     #{ host: "staging-server", directory: "/var/www/example.com/staging/shared", uri: "http://staging.example.com" },
