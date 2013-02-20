@@ -1,13 +1,14 @@
 # encoding: UTF-8
-class HTTPError < StandardError; end
-class MalformedTargetsError < StandardError; end
-class SSHError < StandardError; end
-
 require 'net/http'
 require "curses"
-include Curses
 
 class RedButton
+  include Curses
+
+  class HTTPError < StandardError; end
+  class MalformedTargetsError < StandardError; end
+  class SSHError < StandardError; end
+
   attr_reader :targets
 
   def initialize(targets)
