@@ -87,11 +87,9 @@ class RedButton
   end
 
   def targets_are_valid
-    targets.each do |target|
-      return false unless target[:host] && target[:directory] && target[:uri]
+    targets.all? do |target|
+      target[:host] && target[:directory] && target[:uri]
     end
-
-    true
   end
 
   def this_is_really_happening
